@@ -1,0 +1,32 @@
+<!-- <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Index</th>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Race</th>
+      <th>Âge</th>
+      <th>Veterinaire</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="
+        let chien of chiens;
+        let index = index;
+        let nbr = count;
+        let first = first;
+        let last = last
+      "
+    >
+      <td>{{ index }}</td>
+      <td>{{ chien.id }}</td>
+      <td>{{ chien.nom }}</td>
+      <td>{{ chien.race }}</td>
+      <td>{{ chien.age }}</td>
+      <td>{{ chien.veterinaire.nomVet }}</td>
+      <td><a class="btn btn-danger" (click)="supprimerChien(chien)">Supprimer</a></td>
+      <td><a class="btn btn-success" [routerLink]="['/updateChien',chien.id]">Modifier</a></td>
+    </tr>
+  </tbody>
+</table> -->

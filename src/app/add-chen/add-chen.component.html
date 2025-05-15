@@ -1,0 +1,59 @@
+<div class="container">
+  <div>
+    <h2>Ajouter un Chien :</h2>
+  </div>
+  <form (ngSubmit)="addChien()">
+    <!-- <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Id Chien</label>
+      <input
+        type="number"
+        [(ngModel)]="newChien.id"
+        name="id"
+        class="form-control"
+      />
+    </div> -->
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Chien</label>
+      <input
+        type="text"
+        [(ngModel)]="newChien.nom"
+        name="nom"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Race Chien</label>
+      <input
+        type="text"
+        [(ngModel)]="newChien.race"
+        name="race"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Âge Chien</label>
+      <input
+        type="number"
+        [(ngModel)]="newChien.age"
+        name="age"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Veterinaire</label>
+      <select
+        class="form-control form-control-lg"
+        id="idVet"
+        name="idVet"
+        [(ngModel)]="newIdVet"
+      >
+        <option *ngFor="let vet of veterinaires" [value]="vet.idVet">
+          {{ vet.nomVet }}
+        </option>
+      </select>
+    </div>
+    <div class="mt-2">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<form (ngSubmit)="saveVeterinaire()">
+    <div>
+      <label [hidden]>ID Vétérinaire</label>
+      <input
+        type="text"
+        [(ngModel)]="veterinaire.idVet"
+        name="idVet"
+        class="form-control w-25">
+    </div>
+  
+    <div>
+      <label>Nom Vétérinaire</label>
+      <input
+        type="text"
+        [(ngModel)]="veterinaire.nomVet"
+        name="nomVet"
+        class="form-control"
+        placeholder="Entrez un nom de vétérinaire...">
+    </div>
+  
+    <div>
+      <label>Spécialité</label>
+      <input
+        type="text"
+        [(ngModel)]="veterinaire.specialite"
+        name="specialite"
+        class="form-control"
+        placeholder="Entrez la spécialité...">
+    </div>
+  
+    <div class="mt-2">
+      
+      <button type="submit" [disabled]="!veterinaire.nomVet || !veterinaire.specialite" class="btn btn-success"
+        (click)="saveVeterinaire()" >{{ajout ? 'Ajouter' : 'Modifier'}}
+    </button>
+
+    </div>
+  </form>
+  

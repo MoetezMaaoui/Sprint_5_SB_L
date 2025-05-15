@@ -1,0 +1,63 @@
+<div class="container">
+  <div>
+    <h2>Modifier un Chien :</h2>
+  </div>
+  <form (ngSubmit)="updateChien()">
+    <div hidden class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Chien</label>
+      <input
+        readonly
+        type="text"
+        [(ngModel)]="currentChien.id"
+        name="id"
+        class="form-control"
+        disabled
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Chien</label>
+      <input
+        type="text"
+        [(ngModel)]="currentChien.nom"
+        name="nom"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>Race Chien</label>
+      <input
+        type="text"
+        [(ngModel)]="currentChien.race"
+        name="race"
+        class="form-control"
+      />
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Âge Chien</label>
+      <input
+        type="number"
+        [(ngModel)]="currentChien.age"
+        name="age"
+        class="form-control"
+      />
+    </div>
+
+    <div>
+      <label>Vétérinaire</label>
+      <select
+        class="form-control form-control-lg"
+        id="idVet"
+        name="idVet"
+        [(ngModel)]="updatedVetId"
+      >
+        <option *ngFor="let vet of veterinaires" [value]="vet.idVet">
+          {{ vet.nomVet }}
+        </option>
+      </select>
+    </div>
+
+    <div class="mt-2">
+      <button type="submit" class="btn btn-success">Modifier</button>
+    </div>
+  </form>
+</div>

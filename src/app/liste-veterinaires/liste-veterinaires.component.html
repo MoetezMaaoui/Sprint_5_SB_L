@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+        <app-update-veterinaires
+          [veterinaire]="updatedVet"
+          (veterinaireUpdate)="veterinaireUpdated($event)"
+          [ajout]="ajout"
+        >
+        </app-update-veterinaires>
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom Veterinaire</th>
+            <th>Specialite</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let vet of veterinaires; trackBy: trackById">
+            <tr>
+              <td>{{ vet.idVet }}</td>
+              <td>{{ vet.nomVet }}</td>
+              <td>{{ vet.specialite }}</td>
+              <td><a class="btn btn-success" (click)="updateVet(vet)">Editer</a></td>
+            </tr>
+          </tbody>
+          
+      </table>
+    </div>
+  </div>
+</div>
